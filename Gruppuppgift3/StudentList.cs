@@ -100,10 +100,12 @@ namespace GroupAssignment3
         {
             Console.WriteLine($"Följande studenter finns inte med i en grupp:");
 
-            for (int student = 0; student < groupArray.GetLength(1); student++)
-            {
-                Console.WriteLine(groupArray[groupArray.GetLength(0)-1, student]);
-            }
+            if (NrStudentsNotInGroup > 0)
+                for (int student = 0; student < groupArray.GetLength(1); student++)
+                {
+                    Console.WriteLine(groupArray[groupArray.GetLength(0) - 1, student]);
+                }
+            else Console.WriteLine("Alla studenter finns i en grupp");
         }
 
         public void Sort()
