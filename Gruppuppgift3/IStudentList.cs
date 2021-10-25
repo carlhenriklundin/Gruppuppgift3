@@ -37,7 +37,7 @@ namespace GroupAssignment3
         /// Sort the Students alphabetically
         /// Implement sort on strings using either SelectionSort or BubbleSort from BOOP_05_07 
         /// </summary>
-        public void Sort();
+        public void SortStudentList();
 
         /// <summary>
         /// Fills StudentList with the names of the students from of OOP1 .Net5 

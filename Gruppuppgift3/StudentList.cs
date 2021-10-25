@@ -70,45 +70,45 @@ namespace GroupAssignment3
 
         public string[,] CreateGroups()
         {
-            string[,] groupArray = new string[NrOfGroups + 1, NrStudentsInGroup];
-            ShuffleStudents();
-            int studentsIndex = 0;
+            string[,] studentGroups = new string[NrOfGroups + 1, NrStudentsInGroup];
+            ShuffleStudentList();
+            int studentListIndex = 0;
 
-            for (int group = 0; group < groupArray.GetLength(0); group++)
+            for (int group = 0; group < studentGroups.GetLength(0); group++)
             {
-                for (int student = 0; student < groupArray.GetLength(1); student++)
+                for (int student = 0; student < studentGroups.GetLength(1); student++)
                 {
-                    groupArray[group, student] = students[studentsIndex++];
+                    studentGroups[group, student] = students[studentListIndex++];
                 }
             }
 
-            return groupArray;
+            return studentGroups;
         }
 
-        public void GetGroup(string[,] groupArray)
+        public void GetGroup(string[,] studentGroups)
         {
             UserInput.TryReadInt32("Vilken grupp vill du skriva ut?", 1, NrOfGroups, out int groupNumber);
             Console.WriteLine($"Grupp {groupNumber} har följande medlemmar:");
 
-            for (int student = 0; student < groupArray.GetLength(1); student++)
+            for (int student = 0; student < studentGroups.GetLength(1); student++)
             {
-                Console.WriteLine(groupArray[groupNumber - 1, student]);
+                Console.WriteLine(studentGroups[groupNumber - 1, student]);
             }
         }
 
-        public void RemainToGroup(string[,] groupArray)
+        public void RemainToGroup(string[,] studentGroups)
         {
             Console.WriteLine($"Följande studenter finns inte med i en grupp:");
 
             if (NrStudentsNotInGroup > 0)
-                for (int student = 0; student < groupArray.GetLength(1); student++)
+                for (int student = 0; student < NrStudentsNotInGroup; student++)
                 {
-                    Console.WriteLine(groupArray[groupArray.GetLength(0) - 1, student]);
+                    Console.WriteLine(studentGroups[studentGroups.GetLength(0) - 1, student]);
                 }
             else Console.WriteLine("Alla studenter finns i en grupp");
         }
 
-        public void Sort()
+        public void SortStudentList()
         {
             for (int unsortedStart = 0; unsortedStart < students.Length - 1; unsortedStart++)
             {
@@ -123,7 +123,7 @@ namespace GroupAssignment3
             }
         }
         
-        public void ShuffleStudents()
+        public void ShuffleStudentList()
         {
             Random rnd = new Random();
 

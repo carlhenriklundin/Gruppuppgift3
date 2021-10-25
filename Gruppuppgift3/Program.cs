@@ -21,7 +21,7 @@ namespace GroupAssignment3
             Console.WriteLine(myStudents);
 
             Console.WriteLine("\nSorted student list");
-            myStudents.Sort();
+            myStudents.SortStudentList();
             Console.WriteLine(myStudents);
             Console.WriteLine();
 
@@ -35,10 +35,10 @@ namespace GroupAssignment3
             Console.WriteLine($"If you make {NrOfGroups} group(s), each group will have {myStudents.NrStudentsInGroup} student(s) with {myStudents.NrStudentsNotInGroup} student(s) remaining to be placed in the groups.");
 
 
-            string[,] groupArray = myStudents.CreateGroups();
-            myStudents.GetGroup(groupArray);
+            string[,] studentGroups = myStudents.CreateGroups();
+            myStudents.GetGroup(studentGroups);
             Console.WriteLine();
-            myStudents.RemainToGroup(groupArray);
+            myStudents.RemainToGroup(studentGroups);
         }
     }
 }
