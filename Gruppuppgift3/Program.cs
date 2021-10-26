@@ -33,7 +33,7 @@ namespace GroupAssignment3
 
             myStudents.NrOfGroups = NrOfGroups;
             Console.WriteLine($"If you make {NrOfGroups} group(s), each group will have {myStudents.NrStudentsInGroup} student(s) with {myStudents.NrStudentsNotInGroup} student(s) remaining to be placed in the groups.");
-
+            Console.WriteLine();
 
             string[,] studentGroups = myStudents.CreateGroups();
             myStudents.GetGroup(studentGroups);

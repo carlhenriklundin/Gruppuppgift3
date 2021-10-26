@@ -76,7 +76,7 @@ namespace GroupAssignment3
 
             for (int group = 0; group < studentGroups.GetLength(0); group++)
             {
-                for (int student = 0; student < studentGroups.GetLength(1); student++)
+                for (int student = 0; student < studentGroups.GetLength(1) && studentListIndex <= NrOfStudents; student++)
                 {
                     studentGroups[group, student] = students[studentListIndex++];
                 }
