@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Grupp Budapest: Carl-Henrik, Sam, Vidar
+
+using System;
 
 namespace GroupAssignment3
 {
